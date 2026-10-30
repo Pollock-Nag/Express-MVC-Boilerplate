@@ -1,0 +1,24 @@
+:root {
+  color: #172033;
+  background: #f5f7fb;
+  font-family: system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #3157c8; text-decoration: none; }
+.navbar, .container, footer { width: min(92%, 960px); margin: auto; }
+.navbar { display: flex; justify-content: space-between; padding: 1.25rem 0; }
+.navbar div { display: flex; gap: 1rem; }
+.brand { color: #172033; font-weight: 700; }
+.container { padding: 4rem 0; }
+.hero { min-height: 70vh; }
+.eyebrow { color: #3157c8; font-weight: 700; }
+h1 { max-width: 650px; font-size: clamp(2.25rem, 6vw, 4.5rem); line-height: 1.05; margin: 0 0 1rem; }
+.hero p:not(.eyebrow) { max-width: 520px; font-size: 1.1rem; }
+.button { display: inline-block; margin-top: 1rem; padding: .75rem 1rem; color: white; background: #3157c8; border-radius: .4rem; }
+.user-list { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.user-card { padding: 1.25rem; background: white; border: 1px solid #e2e6f0; border-radius: .5rem; }
+.user-card h2 { margin-top: 0; }
+.empty { padding: 2rem; background: white; border: 1px dashed #b7bfd2; border-radius: .5rem; }
+footer { padding: 1rem 0 2rem; color: #65708a; border-top: 1px solid #e2e6f0; }
