@@ -52,7 +52,9 @@ npm run seed
 
 Open `http://localhost:3000`. The available routes are `GET /` and `GET /users`. Unknown routes show a simple 404 page.
 
-Run `npm run seed` once after configuring MongoDB to insert the example users. It does not clear existing data, so running it more than once creates duplicates.
+`npm run dev` uses Nodemon to restart the server automatically when files change.
+
+Run `npm run seed` after configuring MongoDB to insert the example users. Existing users are matched by email and skipped, so the command is safe to run more than once.
 
 ## Reusable partials
 

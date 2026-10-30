@@ -22,9 +22,22 @@ async function seed() {
   }
 
   await mongoose.connect(process.env.MONGODB_URI);
-  await User.insertMany(users);
-  console.log(`${users.length} users inserted.`);
-  await mongoose.disconnect();
+  const results = await Promise.all(
+    users.map((user) =>
+      User.updateOne(
+        { email: user.email },
+        { $set: user },
+        { upsert: true }
+      )
+    )
+  );
+
+  const inserted = results.filter(r => r.upsertedCount === 1).length;
+  const updated = results.filter(r => r.modifiedCount === 1).length;
+  const skipped = results.filter(r => r.matchedCount === 1 && r.modifiedCount === 0).length;
+
+  console.log(`${inserted} new users inserted, ${updated} existing users updated, and ${skipped} unchanged users skipped.`);
+    await mongoose.disconnect();
 }
 
 seed().catch(async (error) => {

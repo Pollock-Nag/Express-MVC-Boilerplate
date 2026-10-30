@@ -18,7 +18,8 @@ h1 { max-width: 650px; font-size: clamp(2.25rem, 6vw, 4.5rem); line-height: 1.05
 .hero p:not(.eyebrow) { max-width: 520px; font-size: 1.1rem; }
 .button { display: inline-block; margin-top: 1rem; padding: .75rem 1rem; color: white; background: #3157c8; border-radius: .4rem; }
 .user-list { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-.user-card { padding: 1.25rem; background: white; border: 1px solid #e2e6f0; border-radius: .5rem; }
+.user-card { min-width: 0; padding: 1.25rem; background: white; border: 1px solid #e2e6f0; border-radius: .5rem; overflow-wrap: anywhere; }
 .user-card h2 { margin-top: 0; }
+.user-card p { overflow-wrap: anywhere; }
 .empty { padding: 2rem; background: white; border: 1px dashed #b7bfd2; border-radius: .5rem; }
 footer { padding: 1rem 0 2rem; color: #65708a; border-top: 1px solid #e2e6f0; }
